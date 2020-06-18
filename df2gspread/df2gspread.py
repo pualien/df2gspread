@@ -23,7 +23,7 @@ except NameError:  # Python 3
 
 def upload(df, gfile="/New Spreadsheet", wks_name=None,
            col_names=True, row_names=True, clean=True, credentials=None,
-           start_cell = 'A1', df_size = False, new_sheet_dimensions = (1000,100), value_input_option='USER_ENTERED'):
+           start_cell = 'A1', df_size = False, new_sheet_dimensions = (1000,100),value_input_option='USER_ENTERED'):
     '''
         Upload given Pandas DataFrame to Google Drive and returns
         gspread Worksheet object
@@ -123,7 +123,7 @@ def upload(df, gfile="/New Spreadsheet", wks_name=None,
         cell_list = wks.range('%s%s:%s%s' % (first_col, start_row, last_col, start_row))
         for idx, cell in enumerate(cell_list):
             cell.value = df.columns.astype(str)[idx]
-        wks.update_cells(cell_list,value_input_option=value_input_option)
+        wks.update_cells(cell_list, value_input_option=value_input_option)
 
     # Addition of row names
     if row_names:
