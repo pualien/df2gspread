@@ -29,7 +29,7 @@ __scripts__ = ['bin/csv2gspread']
 __irequires__ = [
     # CORE DEPENDENCIES
     'argparse>=1.3.0',
-    'google-api-python-client>=1.6.7',
+    'google-api-python-client>=1.1.0',
     'gspread==3.6.0',
     'oauth2client>=1.5.0,<5.0.0dev',
     'pandas'
