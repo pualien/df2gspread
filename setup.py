@@ -10,7 +10,6 @@
 # python-2.7 setup.py build
 
 
-
 from setuptools import setup
 
 VERSION_FILE = "df2gspread/_version.py"
@@ -29,8 +28,8 @@ __scripts__ = ['bin/csv2gspread']
 __irequires__ = [
     # CORE DEPENDENCIES
     'argparse>=1.3.0',
-    'google-api-python-client>=1.1.0',
     'gspread==3.6.0',
+    'google-api-python-client>=1.1.0',
     'oauth2client>=1.5.0,<5.0.0dev',
     'pandas'
 ]
@@ -56,34 +55,27 @@ with open(readme_pth) as _file:
 github = 'https://github.com/maybelinot/df2gspread'
 download_url = '%s/archive/master.zip' % github
 
-default_setup = dict(
-    url=github,
-    license='GPLv3',
-    author='Eduard Trott',
-    author_email='etrott@redhat.com',
-    maintainer='Chris Ward',
-    maintainer_email='cward@redhat.com',
-    download_url=download_url,
-    long_description=readme,
-    data_files=[],
-    classifiers=[
-        'License :: OSI Approved :: GNU General Public License v3 (GPLv3)',
-        'Natural Language :: English',
-        'Programming Language :: Python :: 2.7',
-        'Topic :: Office/Business',
-        'Topic :: Utilities',
-    ],
-    keywords=['information'],
-    dependency_links=__deplinks__,
-    description=__desc__,
-    install_requires=__irequires__,
-    extras_require=__xrequires__,
-    name=__pkg__,
-    package_dir=__pkgdir__,
-    packages=__pkgs__,
-    scripts=__scripts__,
-    version=__version__,
-    zip_safe=False,
-)
-
-setup(**default_setup)
+setup(url=github,
+      license='GPLv3',
+      author='Eduard Trott',
+      author_email='etrott@redhat.com',
+      maintainer='Chris Ward',
+      maintainer_email='cward@redhat.com',
+      long_description=readme,
+      data_files=[],
+      classifiers=[
+          'License :: OSI Approved :: GNU General Public License v3 (GPLv3)',
+          'Natural Language :: English',
+          'Programming Language :: Python :: 2.7',
+          'Topic :: Office/Business',
+          'Topic :: Utilities',
+      ],
+      keywords=['information'],
+      packages=__pkgs__,
+      install_requires=__irequires__,
+      extras_require=__xrequires__,
+      name=__pkg__,
+      description=__desc__,
+      scripts=__scripts__,
+      version=__version__,
+      zip_safe=False)
